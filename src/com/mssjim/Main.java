@@ -1,10 +1,11 @@
 package com.mssjim;
 
 import javax.security.auth.login.LoginException;
+import javax.swing.WindowConstants;
 
-import com.mssjim.comandos.cmdNatal;
+import com.mssjim.comandos.cmdBan;
 import com.mssjim.comandos.cmdNatal2;
-import com.mssjim.comandos.cmdNatal3;
+import com.mssjim.comandos.cmdChannels;
 import com.mssjim.comandos.cmdNatal4;
 import com.mssjim.core.CommandHandler;
 import com.mssjim.core.MessageListener;
@@ -23,9 +24,11 @@ public class Main {
     public static JDA jda;
     public static boolean log = false;
     
-    private static Janela janela = new Janela("Projeto Cabooso");
+    public static Janela janela;
 
     public static void main(String[] args) {
+    	janela = new Janela("Projeto Cabooso");
+		janela.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     	janela.setContent(new BootPanel());
 
     	System.out.println("Aguardando token...");
@@ -46,10 +49,10 @@ public class Main {
         builder.addEventListeners(new MemberJoinListener());
 
         // Geral
-        CommandHandler.commands.put("gartic", new cmdNatal());      // Ban
-        CommandHandler.commands.put("help", new cmdNatal2());      // Ademar
-        CommandHandler.commands.put("caboose", new cmdNatal3());  // Cria canais
-        CommandHandler.commands.put("iniciar", new cmdNatal4()); // Flood PV
+        //CommandHandler.commands.put("gartic", new cmdNatal());      // Ban
+        //CommandHandler.commands.put("help", new cmdNatal2());      // Ademar
+        //CommandHandler.commands.put("caboose", new cmdNatal3());  // Cria canais
+        //CommandHandler.commands.put("iniciar", new cmdNatal4()); // Flood PV
 
         try {
             jda = builder.build();

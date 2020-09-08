@@ -11,6 +11,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import com.mssjim.Main;
+import com.mssjim.assets.Cor;
 
 public class BootPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
@@ -22,7 +23,7 @@ public class BootPanel extends JPanel {
 		setLayout(null);
 
 		JLabel lbl = new JLabel("Insira o token do bot:");
-		lbl.setForeground(new Color(0, 139, 139));
+		lbl.setForeground(Cor.principal);
 		lbl.setFont(new Font("Consolas", Font.BOLD, 19));
 		lbl.setBounds(20, 11, 360, 36);
 		add(lbl);

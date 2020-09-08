@@ -7,9 +7,11 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
+import javax.swing.UIManager.LookAndFeelInfo;
 import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.WindowConstants;
-import javax.swing.UIManager.LookAndFeelInfo;
+
+import com.mssjim.assets.URL;
 
 public class Janela extends JFrame {
 	private static final long serialVersionUID = 1L;
@@ -36,7 +38,7 @@ public class Janela extends JFrame {
 		setTitle(getTitulo());
 		setResizable(false);
 		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-		setIconImage(new ImageIcon(getClass().getResource("/imagens/Icone.png")).getImage());
+		setIconImage(new ImageIcon(getClass().getResource(URL.icone)).getImage());
 		setVisible(true);
 	}
 
